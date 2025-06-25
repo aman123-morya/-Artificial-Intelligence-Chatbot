@@ -26,15 +26,12 @@ public class SmartChatBot extends JFrame {
     }
 
     private void setupDarkNimbus() {
-        // Set global dark theme colors
         UIManager.put("control", new ColorUIResource(18, 18, 18));
         UIManager.put("info", new ColorUIResource(18, 18, 18));
         UIManager.put("nimbusBase", new ColorUIResource(18, 18, 18));
         UIManager.put("nimbusLightBackground", new ColorUIResource(18, 18, 18));
         UIManager.put("text", new ColorUIResource(230, 230, 230));
         UIManager.put("nimbusSelectionBackground", new ColorUIResource(104, 93, 156));
-
-        // Fix JTextPane background painting under Nimbus
         UIManager.put("TextPane[Enabled].backgroundPainter", (Painter<JComponent>) (g, comp, w, h) -> {
             g.setColor(comp.getBackground());
             g.fillRect(0, 0, w, h);
